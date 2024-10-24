@@ -1,11 +1,12 @@
 #Minaya A
 
-def decode(digits):
-    old_password = ''
-    for i in range(len(digits)):
-        a = (int(digits[i])-3 + 10)%10
-        old_password += str(a)
-    return old_password
+def encode():
+    password = input("Please enter your password to encode: ")
+    print("Your password has been encoded and stored!\n")
+    new_password = ''
+    for i in range(len(password)):
+        new_password  += str((int(password[i]) + 3) % 10)
+    return new_password
 
 if __name__ == '__main__':
 
@@ -18,10 +19,8 @@ if __name__ == '__main__':
         print('3.\tQuit\n')
         choice = input("Please enter an option: ")
         if choice == '1':
-            encoded_password= encode()
+            encoded_password = encode()
         elif choice == '2':
-            decoded_password= decode(encoded_password)
-            print("The encoded password is", encoded_password,",", end="")
-            print("and the original password is", decoded_password)
+            decode()
         elif choice == '3':
             break
